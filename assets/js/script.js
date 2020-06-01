@@ -51,6 +51,23 @@ var initDisplay = function() {
 
 
 
+var save = function() {
+    localStorage.setItem("hour", JSON.stringify(hour));
+    console.log(hour);
+
+};
+var load = function() {
+    tasks = JSON.parse(localStorage.getItem("tasks"));
+}
+
+
+$(".btn-primary").on("click", "button", function() {
+    save();
+})
+
+
+
+
 
 initDisplay();
-console.log(hour)
+load();
